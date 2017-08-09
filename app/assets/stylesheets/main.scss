@@ -1,0 +1,24 @@
+
+.whole {
+  height: 100vh;
+  width: 100%;
+  min-width: 900px;
+}
+.header {
+  height: 10%;
+  width: 100%;
+  background-color: red;
+}
+.theme {
+  width: 20%;
+  background-color: #0ff;
+  height: 90%;
+  position: relative;
+  float: left;
+}
+.contents {
+  width: 80%;
+  height: 90%;
+  margin-left: 20%;
+  background-color: green;
+}

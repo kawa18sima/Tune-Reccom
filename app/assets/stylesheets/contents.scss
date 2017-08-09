@@ -1,0 +1,15 @@
+
+.contents {
+  &__left {
+    width: 30%;
+    height: 100%;
+    background-color: gray;
+    float: left;
+  }
+  &__right {
+    width: 70%;
+    height: 100%;
+    margin-left: 30%;
+    background-color: blue;
+  }
+}
