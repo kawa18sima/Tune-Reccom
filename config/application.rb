@@ -19,5 +19,6 @@ module TuneReccom
       g.assets         false
       g.helper         false
       g.test_framework false
+    end
   end
 end
