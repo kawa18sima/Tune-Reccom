@@ -11,7 +11,17 @@ class MusicsController < ApplicationController
   end
 
   def recommends
-    @musics = Music.all
+    id = params[:music_id].to_i
+    search_path = Dir.glob(Rails.root.join('public', 'search.py'))
+    system("python3 #{search_path} #{index}")
+    num_path = "search.txt"
+    num = []
+    File.open(num_path, "r") do |f|
+      f.each_line do |line|
+        num << line.chomp.to_i
+      end
+    end
+    @musics = Music.find(num)
     render partial: "index"
   end
 
