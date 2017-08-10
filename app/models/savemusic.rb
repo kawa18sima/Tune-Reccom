@@ -7,15 +7,12 @@ class Savemusic
       artist_name = music_name[0].split("--")[0]
 
       aritists = Artist.where(name: artist_name).first_or_initialize
-      aritists.save
+      aritists.save!
 
-      artist_id = Artist.find_by( name: artist_name)
+      artist_id = Artist.find_by(name: artist_name)
 
-      musics = Music.where(name: music_name, path: music_path, artist_id: artist_id.id).first_or_initialize
-      musics.save
-
-      music = Music.find(100)
-      puts music.aritist
+      musics = Music.where(title: music_name, path: music_path, artist_id: artist_id.id).first_or_initialize
+      musics.save!
     end
   end
 end
