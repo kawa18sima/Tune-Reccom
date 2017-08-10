@@ -14,13 +14,49 @@
 //= require_tree .
 $(function(){
   $(".theme__item").on("click", function(){
-    var theme_id = $(this).attr("id").substr(6);
-    $.ajax({
-      url: "/musics",
-      type: "GET",
-      data: {
-        theme_id: theme_id
-      }
-    });
+    if($(".contents__left")[0]){
+      var contents = $(".contents");
+      contents.remove();
+      contents.append(contentsLeft);
+      contents.append(contentsRight);
+    }
+    musicsIndex($(this).attr("id").substr(6));
+  });
+  $(".header__search").on("click", function(){
+    if($(".contents__inner")[0]){
+      contents.html(contentsInner);
+    }
   });
 });
+
+function musicsIndex(theme_id) {
+  $.ajax({
+    url: "/musics",
+    type: "GET",
+    data: {
+      theme_id: theme_id
+    }
+  }).done(function(data){
+    $(".musics__list").html(data);
+    recommendsIndex();
+  });
+}
+function recommendsIndex(){
+  $.ajax({
+    url: "/musics/recommends",
+    type: "GET"
+  }).done(function(data){
+    $(".contents__right ul").html(data);
+  });
+}
+
+var contentsLeft =
+  $("<div>").addClass("contents__left").append(
+    $("<ul>").addClass("musics__list")
+  );
+var contensRight =
+  $("<div>").addClass("contents__right").append(
+    $("<ul>")
+  );
+var contentsInner =
+  $("<div>").addClass("contents__inner");
