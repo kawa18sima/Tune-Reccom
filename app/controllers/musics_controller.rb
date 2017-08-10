@@ -30,4 +30,11 @@ class MusicsController < ApplicationController
     @musics = Music.where('title LIKE(?)', "%#{params[:keyword]}%")
     render partial: "tbody"
   end
+
+  def add
+    music = Music.find(params[:music_id])
+    music.theme_id = Theme.first.id
+    music.save
+    render json: {status: "ok"}
+  end
 end

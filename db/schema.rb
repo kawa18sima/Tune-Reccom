@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170810021312) do
+ActiveRecord::Schema.define(version: 20170810053317) do
 
   create_table "artists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -58,6 +58,14 @@ ActiveRecord::Schema.define(version: 20170810021312) do
     t.string "v39"
     t.string "v40"
     t.bigint "music_id"
+    t.string "v41"
+    t.string "v42"
+    t.string "v43"
+    t.string "v44"
+    t.string "v45"
+    t.string "v46"
+    t.string "v47"
+    t.string "v48"
     t.index ["music_id"], name: "index_feature_vectors_on_music_id"
   end
 

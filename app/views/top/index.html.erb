@@ -1,19 +1,21 @@
 <div class="whole">
   <div class="header">
+    <div class="header__logo"></div>
     <div class="header__search"></div>
   </div>
 
   <div class="theme">
+    <div class="margin20"></div>
     <ul class="theme__list">
       <% @themes.each do |theme| %>
         <li class="theme__item" id="theme_<%= theme.id %>"><%= theme.name %></li>
       <% end %>
     </ul>
     <div class="theme__delete">
-      <div class="theme__delete_btn">-</div>
+      <div class="theme__delete_btn"></div>
     </div>
     <div class="theme__new">
-      <div class="theme__new_btn">+</div>
+      <div class="theme__new_btn"></div>
     </div>
   </div>
 
