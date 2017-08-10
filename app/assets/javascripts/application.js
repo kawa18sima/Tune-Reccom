@@ -16,12 +16,32 @@
 $(function(){
   var contents = $(".contents");
   indexMusicsMode();
+  searchMode();
   $(".header__search").on("click", function(){
     if(!$(".contents__inner")[0]){
-      contents.html(contentsInner);
+      searchMode();
     }
   });
 });
+function searchMode() {
+  var contents = $(".contents");
+  contents.html(contentsInner);
+  $(".contents__inner").append(searchBox);
+  $(".contents__inner").append(resultTable);
+  $(".search__submit").off("click");
+  $(".search__submit").on("click", function(){
+    if($(".search__input").val()){
+      $.ajax({
+        url: "/musics/search",
+        type: "GET",
+        data: {
+        }
+      }).done(function(data){
+        $(".result__body").html(data);
+      });
+    }
+  });
+}
 function indexMusicsMode() {
   var contents = $(".contents");
   $(".theme__item").on("click", function(){
@@ -64,3 +84,27 @@ var contentsRight =
   );
 var contentsInner =
   $("<div>").addClass("contents__inner");
+var searchBox =
+  $("<div>").addClass("search__wrapper").append(
+    $("<input>").addClass("search__input").attr({
+      "placeholder": "曲名を入力"
+    })
+  ).append(
+    $("<button>").addClass("search__submit").text("Search!")
+  );
+var resultTable =
+  $("<table>").addClass("result").append(
+    $("<thead>").addClass("result__head").append(
+      $("<tr>").append(
+        $("<th>").text("ランキング")
+      ).append(
+        $("<th>").text("曲名")
+      ).append(
+        $("<th>").text("アーティスト")
+      ).append(
+        $("<th>").text("再生時間")
+      )
+    )
+  ).append(
+    $("<tbody>").addClass("result__body")
+  );

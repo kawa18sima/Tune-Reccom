@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :musics do
     collection do
       get :recommends
+      get :search
     end
   end
 end
