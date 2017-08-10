@@ -25,8 +25,11 @@ $(function(){
 });
 function searchMode() {
   var contents = $(".contents");
+  var contentsInner = $("<div>").addClass("contents__inner");
   contents.html(contentsInner);
+  $(".contents__inner").append($("<div>").addClass("margin20"));
   $(".contents__inner").append(searchBox);
+  $(".contents__inner").append($("<div>").addClass("margin20"));
   $(".contents__inner").append(resultTable);
   $(".search__submit").off("click");
   //$(".search__submit").on("click", function(){
@@ -99,7 +102,7 @@ var resultTable =
   $("<table>").addClass("result").append(
     $("<thead>").addClass("result__head").append(
       $("<tr>").append(
-        $("<th>").text("ランキング")
+        $("<th>").text("追加")
       ).append(
         $("<th>").text("曲名")
       ).append(

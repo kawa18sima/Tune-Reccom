@@ -1,4 +1,10 @@
 
+.add_theme_btn {
+  width: 40px;
+  height: 40px;
+  background-color: gray;
+  margin: 0 auto;
+}
 .search__wrapper {
   display: flex;
   width: 70%;
@@ -52,20 +58,18 @@
         transition: background-color 0.3s ease 0s;
       }
     }
-    &:nth-child(2n+1) {
+    tr:nth-child(2n+1) {
       td {
         background: none repeat scroll 0 0 #F7F7F7;
       }
     }
-    &:hover {
+    tr:hover {
       td {
         background: none repeat scroll 0 0 #EBF6F7;
       }
     }
   }
 }
-
-
 
 
 

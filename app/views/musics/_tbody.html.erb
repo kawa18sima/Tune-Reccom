@@ -1,6 +1,6 @@
 <% @musics.each do |music| %>
 <tr>
-  <td><%= music.id %></td>
+  <td><div class="add_theme_btn" id=<%= "music_#{music.id}" %>></div></td>
   <td><%= music.title %></td>
   <td><%= music.artist.name %></td>
   <td><%= @random.rand(1..6) %>分<%= @random.rand(1..59) %>秒</td>
