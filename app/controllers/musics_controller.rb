@@ -13,7 +13,7 @@ class MusicsController < ApplicationController
   def recommends
     id = params[:music_id].to_i
     search_path = Dir.glob(Rails.root.join('public', 'search.py'))
-    system("python3 #{search_path} #{index}")
+    system("python3 #{search_path} #{id}")
     num_path = "search.txt"
     num = []
     File.open(num_path, "r") do |f|
