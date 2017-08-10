@@ -38,7 +38,7 @@ function createTheme() {
         }
       }).done(function(data){
         $(".theme__list").append(
-          $("<li>").text(data.name)
+          $("<li>").addClass("theme__item").text(data.name)
         );
         $(".theme__input").remove();
         btn.on("click", createTheme);
