@@ -22,6 +22,19 @@ $(function(){
       searchMode();
     }
   });
+
+  $(document).on("click", function(e){
+    if ($(e.target).attr("class") == "add_theme_btn") {
+      var music_id = $(e.target).attr("id").substr(6);
+      $.ajax({
+        url: "musics/add",
+        type: "GET",
+        data: { music_id: music_id }
+      }).done(function(data){
+        alert("追加されました！");
+      });
+    }
+  });
 });
 function searchMode() {
   var contents = $(".contents");
@@ -36,7 +49,6 @@ function searchMode() {
   $(".search__input").on("keyup", function(){
     if($(".search__input").val()){
       var keyword = $(".search__input").val();
-      console.log(keyword);
       $.ajax({
         url: "/musics/search",
         type: "GET",
@@ -68,13 +80,18 @@ function musicsIndex(theme_id) {
     }
   }).done(function(data){
     $(".musics__list").html(data);
-    recommendsIndex();
+    var music_id = $(".musics__item:eq(0)").attr("id").substr(6);
+    console.log(music_id);
+    recommendsIndex(music_id);
   });
 }
-function recommendsIndex(){
+function recommendsIndex(id){
   $.ajax({
     url: "/musics/recommends",
-    type: "GET"
+    type: "GET",
+    data: {
+      music_id: id
+    }
   }).done(function(data){
     $(".contents__right ul").html(data);
   });

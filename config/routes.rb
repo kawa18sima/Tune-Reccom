@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     collection do
       get :recommends
       get :search
+      get :add
     end
   end
 end
