@@ -1,7 +1,7 @@
 
 <% @musics.each do |music| %>
   <li class="musics__item" id=<%= "music_#{music.id}" %>>
-    <p class="musics__title"><%= music.title %></p>
-    <p class="musics__artist"><%= music.artist ? music.artist.name : "none" %></p>
+    <p class="musics__title">曲名：<%= music.title %></p>
+    <p class="musics__artist">アーティスト：<%= music.artist ? music.artist.name : "none" %></p>
   </li>
 <% end %>

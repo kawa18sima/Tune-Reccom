@@ -10,14 +10,16 @@
     width: 70%;
     height: 100%;
     margin-left: 30%;
-    background-color: blue;
+    background-color: white;
   }
 }
 
 .musics {
   &__item {
-    height: 30px;
+    height: 60px;
     width: 100%;
     border-bottom: 1px dotted #ccc;
+    padding: 15px;
+    color: white;
   }
 }
