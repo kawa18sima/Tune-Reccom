@@ -2,6 +2,16 @@
 
 .theme {
 
+  &__item {
+    height: 40px;
+    width: 100%;
+    color: white;
+    padding-left: 30px;
+    font-size: 26px;
+    &:hover {
+      background-color: #00ac97;
+    }
+  }
   &__new {
     width: 100%;
     height: 50px;
