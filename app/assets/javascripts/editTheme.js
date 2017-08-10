@@ -4,17 +4,17 @@ $(function(){
   $(".theme__delete_btn").on("click", deleteThemeMode);
 });
 function deleteThemeMode() {
-  
+  $(".theme__item").off("click");
   $(".theme__item").on("click", function(){
     var theme_id = $(this).attr("id").substr(6);
     $.ajax({
-      url: "/themes",
+      url: "/themes/"+theme_id,
       type: "DELETE",
-      data: {
-        theme_id: theme_id
-      }
     }).done(function(data){
-      $("#"+data.theme_id).remove();
+      console.log(data)
+      $("#theme_"+data.theme_id).remove();
+      $(".theme__item").off("click");
+      indexMusicsMode();
     });
   });
 }

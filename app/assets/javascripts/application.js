@@ -12,23 +12,27 @@
 //
 //= require rails-ujs
 //= require_tree .
+
 $(function(){
+  var contents = $(".contents");
+  indexMusicsMode();
+  $(".header__search").on("click", function(){
+    if(!$(".contents__inner")[0]){
+      contents.html(contentsInner);
+    }
+  });
+});
+function indexMusicsMode() {
+  var contents = $(".contents");
   $(".theme__item").on("click", function(){
-    if($(".contents__left")[0]){
-      var contents = $(".contents");
+    if(!$(".contents__left")[0]){
       contents.empty();
       contents.append(contentsLeft);
       contents.append(contentsRight);
     }
     musicsIndex($(this).attr("id").substr(6));
   });
-  $(".header__search").on("click", function(){
-    if($(".contents__inner")[0]){
-      contents.html(contentsInner);
-    }
-  });
-});
-
+}
 function musicsIndex(theme_id) {
   $.ajax({
     url: "/musics",
@@ -54,7 +58,7 @@ var contentsLeft =
   $("<div>").addClass("contents__left").append(
     $("<ul>").addClass("musics__list")
   );
-var contensRight =
+var contentsRight =
   $("<div>").addClass("contents__right").append(
     $("<ul>")
   );
