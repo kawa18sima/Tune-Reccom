@@ -1,7 +1,23 @@
 
 $(function(){
   $(".theme__new_btn").on("click", createTheme);
+  $(".theme__delete_btn").on("click", deleteThemeMode);
 });
+function deleteThemeMode() {
+  
+  $(".theme__item").on("click", function(){
+    var theme_id = $(this).attr("id").substr(6);
+    $.ajax({
+      url: "/themes",
+      type: "DELETE",
+      data: {
+        theme_id: theme_id
+      }
+    }).done(function(data){
+      $("#"+data.theme_id).remove();
+    });
+  });
+}
 function createTheme() {
   var btn = $(".theme__new_btn");
   $(".theme__new").append(

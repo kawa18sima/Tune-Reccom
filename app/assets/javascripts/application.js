@@ -16,7 +16,7 @@ $(function(){
   $(".theme__item").on("click", function(){
     if($(".contents__left")[0]){
       var contents = $(".contents");
-      contents.remove();
+      contents.empty();
       contents.append(contentsLeft);
       contents.append(contentsRight);
     }
