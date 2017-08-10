@@ -29,12 +29,15 @@ function searchMode() {
   $(".contents__inner").append(searchBox);
   $(".contents__inner").append(resultTable);
   $(".search__submit").off("click");
-  $(".search__submit").on("click", function(){
+  //$(".search__submit").on("click", function(){
+  $(".search__input").on("keyup", function(){
     if($(".search__input").val()){
+      var keyword = $(".search__input").val();
+      console.log(keyword);
       $.ajax({
         url: "/musics/search",
         type: "GET",
-        data: {
+        data: {keyword: keyword
         }
       }).done(function(data){
         $(".result__body").html(data);

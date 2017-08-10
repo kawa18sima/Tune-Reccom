@@ -16,7 +16,8 @@ class MusicsController < ApplicationController
   end
 
   def search
-    @musics = Music.all
+    @random = Random.new
+    @musics = Music.where('title LIKE(?)', "%#{params[:keyword]}%")
     render partial: "tbody"
   end
 end
