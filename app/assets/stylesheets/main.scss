@@ -9,6 +9,13 @@
   width: 100%;
   background: linear-gradient(to bottom, #00ac97, #00ac97);
   position: relative;
+  &__logo {
+    background-repeat: no-repeat;
+    background-image: url("logo.png");
+    display: inline-block;
+    height: 100%;
+    width: 400px;
+  }
 }
 .theme {
   width: 20%;
@@ -30,4 +37,5 @@
   background-color: lightskyblue;
   position: absolute;
   right: 30px;
+  top: 0;
 }
