@@ -19,6 +19,7 @@ function deleteThemeMode() {
   });
 }
 function createTheme() {
+  indexMusicsMode();
   var btn = $(".theme__new_btn");
   $(".theme__new").append(
     $("<input>").attr({
