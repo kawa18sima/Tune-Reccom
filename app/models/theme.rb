@@ -1,3 +1,3 @@
 class Theme < ApplicationRecord
-  has_many :musics, optional: true
+  has_many :musics
 end
