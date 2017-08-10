@@ -17,6 +17,6 @@ class MusicsController < ApplicationController
 
   def search
     @musics = Music.all
-    render partial: "tbody_inner"
+    render partial: "tbody"
   end
 end
