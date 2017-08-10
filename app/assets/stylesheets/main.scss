@@ -7,12 +7,12 @@
 .header {
   height: 10%;
   width: 100%;
-  background-color: red;
+  background: linear-gradient(to bottom, #00ac97, #00ac97);
   position: relative;
 }
 .theme {
   width: 20%;
-  background-color: #0ff;
+  background: #67b5b7;
   height: 90%;
   position: relative;
   float: left;
@@ -21,7 +21,8 @@
   width: 80%;
   height: 90%;
   margin-left: 20%;
-  background-color: green;
+  background-color: white;
+  padding-top: 20px;
 }
 
 .header__search {
