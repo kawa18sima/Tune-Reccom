@@ -10,9 +10,11 @@ class Savemusic
       aritists.save!
 
       artist_id = Artist.find_by(name: artist_name)
-
+      music_path = "#{ music_name[0]}.wav"
       musics = Music.where(title: music_name, path: music_path, artist_id: artist_id.id).first_or_initialize
       musics.save!
+      puts music_path
     end
   end
 end
+
