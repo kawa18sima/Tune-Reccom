@@ -22,3 +22,14 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+python3 と　MySQLdbモジュールが必要
+
+検索の際は一度　python3 serch.py [探したい音楽のデータベース番号]  をコマンドで打つ
+
+データベースに保存する際には
+rails c を打った後
+Feature.save と
+Savemusic.MusicPath
+を打てばデータベースに保存されるはず
