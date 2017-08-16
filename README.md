@@ -24,9 +24,8 @@ Things you may want to cover:
 * ...
 
 
-python3 と　MySQLdbモジュールが必要
+python3 と MySQLdbモジュールが必要
 
-検索の際は一度　python3 serch.py [探したい音楽のデータベース番号]  をコマンドで打つ
 
 データベースに保存する際には
 rails c を打った後

@@ -1,8 +1,19 @@
+<table>
+  <thead>
+    <tr>
+      <th>音楽名</th>
+      <th>サンプル</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @musics.each do |music| %>
+    <tr class="musics__item" id=<%= "music_#{music.id}" %>>
+      <td class="musics__title"><%= music.title %></td>
+      <td><%= audio_tag("/wave_data/#{music.path}",controls: true) %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
 
-<% @musics.each do |music| %>
-  <li class="musics__item" id=<%= "music_#{music.id}" %>>
-    <p class="musics__title"><%= music.title %>                        <%= audio_tag("/wave_data/#{music.path}",controls: true) %></p>
-    
-    
-  </li>
-<% end %>
+
+

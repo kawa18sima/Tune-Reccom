@@ -12,15 +12,17 @@ class MusicsController < ApplicationController
 
   def recommends
     id = params[:music_id].to_i
-    search_path = "./public/search.py"
-    system("python3 #{search_path} #{id}")
-    num_path = "./public/search.txt"
-    num = []
-    File.open(num_path, "r") do |f|
-      f.each_line do |line|
-        num << line.chomp.to_i
-      end
-    end
+    puts id
+    # search_path = Dir.glob(Rails.root.join('public', 'search.py'))
+    # Open3.capture3("python3 #{search_path} #{id}")
+    # num_path = "./public/search.txt"
+    # num = []
+    # File.open(num_path, "r") do |f|
+    #   f.each_line do |line|
+    #     num << line.chomp.to_i
+    #   end
+    # end
+    num = Search.sea(id)
 
     @musics = []
     num.each do |i|

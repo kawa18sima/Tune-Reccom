@@ -32,7 +32,10 @@ result = calc_similarity.distance(np.array(num),index)
 
 f = open('search.txt', 'w')
 
-num = len(result)
+print(5)
+
+# num = len(result)
+num = 10
 for n in range(num):
   if(n == 0):
     continue

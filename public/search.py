@@ -32,10 +32,11 @@ result = calc_similarity.distance(np.array(num),index)
 
 f = open('search.txt', 'w')
 
-num = len(result)
+# num = len(result)
+num = 18
 for n in range(num):
   if(n == 0):
     continue
   idx = n + 1
   music_idx = sorted( [(v,i) for (i,v) in enumerate(result)] )[-idx][1] #音楽添字
-  f.write(str(music_idx + 1) + "\n")
+  f.write(str(music_idx) + "\n")
